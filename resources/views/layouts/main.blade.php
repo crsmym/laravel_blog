@@ -4,7 +4,7 @@
 <body>
     @include('partials._nav')
         
-    <div class="container">
+    <div id="main" class="container">
         @yield('content')
     </div>
 
