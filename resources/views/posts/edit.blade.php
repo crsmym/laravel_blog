@@ -1,13 +1,16 @@
 @extends('layouts/main')
 
-@section('title', '| View post')
+@section('title', '| edit post')
 
 @section('content')
-
     <div class="row">
+        {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT'], ["class" => 'form-control']) !!}
         <div class="col-md-8">
-            <h1>{{ $post->title }}</h1>
-            <p class="lead">{{ $post->body }}</p>
+            {{ Form::label('title', 'Title:') }}
+            {{ Form::text('title', null, ["class" => 'form-control input-lg']) }}
+            
+            {{ Form::label('title', 'Body:', ['class' => 'form-spacing-top']) }}
+            {{ Form::textarea('body', null, ["class" => 'form-control input-lg']) }}
         </div>
         <div class="col-md-4">
             <div class="well">
@@ -23,17 +26,18 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.edit', 'Edit', array($post->id), array('class' => 'btn btn-primary btn-block')) !!} 
+                        {!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!} 
                     </div>
                     <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.destroy', 'Delete', array($post->id), array('class' => 'btn btn-danger btn-block')) !!} 
+                        {{ Form::submit('save Changes', ['class' => 'btn btn-success btn-block']) }} 
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {!! Form::close() !!}
     <div class="row" style="margin-top: 50px;">
         <a href="/posts" class="btn btn-lg btn-block btn-secondary">Back to list</a>
     </div>
-
-@endsection
+    
+@stop
