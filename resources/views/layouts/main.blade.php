@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="en">
-@include('partials._head')
-<body>
-    @include('partials._nav')
+    @include('partials._head')
+    
+    <body>
+
+        @include('partials._nav')
         
-    <div id="main" class="container">
-        @yield('content')
-    </div>
+        <div id="main" class="container">
+            @include('partials._messages')
+            @yield('content')
+    
+        </div>
 
     @include('partials._footer')
-@include('partials._javascript')
-@yield('scripts')
+    
+    @include('partials._javascript')
+    
+    @yield('scripts')
     </body>
 </html>
