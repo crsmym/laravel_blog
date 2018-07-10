@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-8">
             <div class="post">
               <h3>Post Title</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque in culpa nobis deleniti accusantium deserunt alias illum accusamus cum dolores obcaecati voluptates eius veritatis vel soluta aut, dolorum excepturi consequatur!Asperiores modi eaque odio quam impedit saepe veritatis nam, provident amet! Ex facilis, sequi iste corrupti accusamus architecto officia optio accusantium debitis assumenda obcaecati soluta nulla earum facere vitae! Voluptatum.</p>
@@ -45,6 +45,7 @@
             </div>
             <hr>
           </div>
+          @include('partials._side')
         </div>  
 @endsection                    
 @section('scripts')
